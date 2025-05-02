@@ -285,6 +285,7 @@ about:Slider('设置重力', 'Sliderflag', 196.2, 196.2, 1000,false, function(Va
         game.Workspace.Gravity = Value
     end)
 
+
 about:Slider("跳跃高度!", "JumpPower", game.Players.LocalPlayer.Character.Humanoid.JumpPower, 50, 1000, false, function(Jump)
   spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jump end end)
 end)
@@ -297,6 +298,46 @@ about:Button("飞行",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
+about:Button("飞车",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/63T0fkBm"))()
+end)
+
+about:Button("高画质",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+end)
+
+about:Button("甩人",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+
+about:Toggle("夜视","Toggle",false,function(Value)
+if Value then
+
+		    game.Lighting.Ambient = Color3.new(1, 1, 1)
+
+		else
+
+		    game.Lighting.Ambient = Color3.new(0, 0, 0)
+
+		end
+end)
+
+about:Button("踏空行走",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+end)
+
+about:Button("隐身",function()
+loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()
+end)
+
+about:Button("无敌",function()
+loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()
+end)
+
+about:Button("控制玩家",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/tt/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0%20(1).txt"))()
+end)
+
 about:Button("撸管r6",function()
 loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
 end)
@@ -305,12 +346,32 @@ about:Button("撸管r15",function()
 loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
 end)
 
-local UITab3 = win:Tab("战斗勇士",'16060333448')
+local UITab3 = win:Tab("操人",'16060333448')
 
-local about = UITab3:section("战斗勇士",true)
+local about = UITab3:section("操人",true)
 
-about:Button("战斗勇士",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/frkfx/Combat-Warriors/main/Script"))();
+about:Button("操人脚本",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))();
+end)
+
+local UITab3 = win:Tab("范围",'16060333448')
+
+local about = UITab3:section("范围",true)
+
+about:Button("普通范围",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
+end)
+
+about:Button("中等范围",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
+end)
+
+about:Button("全图范围",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/KKY9EpZU"))()
+end)
+
+about:Button("终极范围",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/CAQ9x4A7"))()
 end)
 
 local UITab3 = win:Tab("各大脚本",'16060333448')
@@ -343,22 +404,6 @@ end)
 
 about:Button("XA",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
-end)
-
-local UITab3 = win:Tab("操人",'16060333448')
-
-local about = UITab3:section("操人",true)
-
-about:Button("操人脚本",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))();
-end)
-
-local UITab3 = win:Tab("活到7天",'16060333448')
-
-local about = UITab3:section("活到7天",true)
-
-about:Button("活到7天",function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
 end)
 
 local UITab3 = win:Tab("河北唐县",'16060333448')
@@ -435,4 +480,72 @@ local about = UITab3:section("被遗弃",true)
 
 about:Button("被遗弃",function()
 loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()-- [(官方群:946378295)]
+end)
+
+local UITab3 = win:Tab("彩虹朋友",'16060333448')
+
+local about = UITab3:section("彩虹朋友",true)
+
+about:Button("彩虹朋友",function()
+loadstring(game:HttpGet("https://pastefy.app/2YdrWHxV/raw"))()
+end)
+
+local UITab3 = win:Tab("举重模拟器",'16060333448')
+
+local about = UITab3:section("举重模拟器",true)
+
+about:Button("举重模拟器",function()
+loadstring(game:HttpGet("https://pastefy.app/KSriAk53/raw"))()
+end)
+
+local UITab3 = win:Tab("火箭发射",'16060333448')
+
+local about = UITab3:section("火箭发射",true)
+
+about:Button("火箭发射",function()
+loadstring(game:HttpGet("https://pastefy.app/CMW6b0kZ/raw"))()
+end)
+
+local UITab3 = win:Tab("躲避",'16060333448')
+
+local about = UITab3:section("躲避",true)
+
+about:Button("躲避1",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dc2-masket27727/Mobile-s-Hub/main/Main/Hydra/Evade.exe"))();
+end)
+
+about:Button("躲避2",function()
+loadstring(game:HttpGet("https://pastefy.app/BrdzWOKp/raw"))()
+end)
+
+local UITab3 = win:Tab("感染力微笑",'16060333448')
+
+local about = UITab3:section("感染力微笑",true)
+
+about:Button("感染力微笑",function()
+loadstring(game:HttpGet("https://pastefy.app/z8mDJJIX/raw"))()
+end)
+
+local UITab3 = win:Tab("超级大力士模拟器",'16060333448')
+
+local about = UITab3:section("超级大力士模拟器",true)
+
+about:Button("超级大力士模拟器",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hngamingroblox/scripts/main/strongman%20simulator'))()
+end)
+
+local UITab3 = win:Tab("死亡球",'16060333448')
+
+local about = UITab3:section("死亡球",true)
+
+about:Button("死亡球1",function()
+loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
+end)
+
+local UITab3 = win:Tab("战斗勇士",'16060333448')
+
+local about = UITab3:section("战斗勇士",true)
+
+about:Button("战斗勇士",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/frkfx/Combat-Warriors/main/Script"))();
 end)
