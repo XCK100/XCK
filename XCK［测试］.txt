@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XCK100/XCK/refs/heads/main/%E9%A1%B5%E9%9D%A2.txt"))()
+local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/j9TdK86G"))()
 
 print("初始化成功✅")
 print("脚本已运行")
