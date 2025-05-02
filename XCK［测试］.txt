@@ -170,22 +170,6 @@ print("执行无敌")
 loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()
 end
 })  
- currency:AddButton({
-	Name = "夜视",
-	Callback = function()
-print("执行夜视")
-if Value then
-
-		    game.Lighting.Ambient = Color3.new(1, 1, 1)
-
-		else
-
-		    game.Lighting.Ambient = Color3.new(0, 0, 0)
-
-		end
-end)
-end
-})   
 currency:AddButton({
 	Name = "隐身",
 	Callback = function()
