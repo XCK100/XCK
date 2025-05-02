@@ -283,3 +283,51 @@ print("执行被遗弃")
 loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()-- [(官方群:946378295)]
 end
 })   
+local currency = Window:MakeTab({
+    Name = "死亡球",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "死亡球",
+	Callback = function()
+print("执行死亡球")
+loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
+end
+})  
+local currency = Window:MakeTab({
+    Name = "OHIO",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) 
+currency:AddButton({
+	Name = "XA",
+	Callback = function()
+print("执行XA")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "刀刃球",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "刀刃球",
+	Callback = function()
+print("执行刀刃球")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/redopy7/Other-Blade-Ball/refs/heads/main/CroixByLoverMan.txt"))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "自然灾害",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "自然灾害",
+	Callback = function()
+print("执行自然灾害")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+end
+})   
