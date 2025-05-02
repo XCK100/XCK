@@ -361,3 +361,15 @@ local about = UITab3:section("河北唐县",true)
 about:Button("河北唐县刷钱脚本",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()
 end)
+
+local UITab3 = win:Tab("俄亥俄州",'16060333448')
+
+local about = UITab3:section("俄亥俄州",true)
+
+about:Button("一拳超人",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxluau/Roblox/main/ScriptHub.lua"))()
+end)
+
+about:Button("xa",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
+end)
