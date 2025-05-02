@@ -353,3 +353,11 @@ local about = UITab3:section("活到7天",true)
 about:Button("活到7天",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
 end)
+
+local UITab3 = win:Tab("河北唐县",'16060333448')
+
+local about = UITab3:section("河北唐县",true)
+
+about:Button("河北唐县刷钱脚本",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()
+end)
