@@ -179,22 +179,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/
 end
 })   
 currency:AddButton({
-	Name = "夜视",
-	Callback = function()
-print("执行夜视")
-if Value then
-
-		    game.Lighting.Ambient = Color3.new(1, 1, 1)
-
-		else
-
-		    game.Lighting.Ambient = Color3.new(0, 0, 0)
-
-		end
-end)
-end
-})   
-currency:AddButton({
 	Name = "甩人",
 	Callback = function()
 print("执行甩人")
