@@ -106,7 +106,13 @@ sound.SoundId = "rbxassetid://4590662766"
 sound:Play()
 end
 })     
-
+announcement:AddButton({
+	Name = "启动指令版空脚本",
+	Callback = function()
+print("执行(指令版空脚本)")
+loadstring(game:HttpGet("https://pastebin.com/raw/UGnRD4xU"))()
+end
+})   
 print("创建分类(announcement-主页)")
 
 local TEST = Window:MakeTab({
@@ -162,6 +168,22 @@ currency:AddButton({
 	Callback = function()
 print("执行无敌")
 loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()
+end
+})  
+ currency:AddButton({
+	Name = "夜视",
+	Callback = function()
+print("执行夜视")
+if Value then
+
+		    game.Lighting.Ambient = Color3.new(1, 1, 1)
+
+		else
+
+		    game.Lighting.Ambient = Color3.new(0, 0, 0)
+
+		end
+end)
 end
 })   
 currency:AddButton({
