@@ -285,7 +285,6 @@ about:Slider('设置重力', 'Sliderflag', 196.2, 196.2, 1000,false, function(Va
         game.Workspace.Gravity = Value
     end)
 
-
 about:Slider("跳跃高度!", "JumpPower", game.Players.LocalPlayer.Character.Humanoid.JumpPower, 50, 1000, false, function(Jump)
   spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jump end end)
 end)
@@ -296,6 +295,14 @@ end)
 
 about:Button("飞行",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+
+about:Button("撸管r6",function()
+loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
+end)
+
+about:Button("撸管r15",function()
+loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
 end)
 
 local UITab3 = win:Tab("战斗勇士",'16060333448')
@@ -372,4 +379,60 @@ end)
 
 about:Button("xa",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
+end)
+
+local UITab3 = win:Tab("刀刃球",'16060333448')
+
+local about = UITab3:section("刀刃球",true)
+
+about:Button("刀刃球",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/redopy7/Other-Blade-Ball/refs/heads/main/CroixByLoverMan.txt"))()
+end)
+
+local UITab3 = win:Tab("压力",'16060333448')
+
+local about = UITab3:section("压力",true)
+
+about:Button("压力",function()
+getgenv().lishichuan="1001390385" loadstring(game:HttpGet("https://pastebin.com/raw/iZuasZCc"))()
+end)
+
+local UITab3 = win:Tab("BF",'16060333448')
+
+local about = UITab3:section("BF",true)
+
+about:Button("BF",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/KindIhave/ChibaHuB/main/Chiba-BF.txt'))()
+end)
+
+local UITab3 = win:Tab("极速传奇",'16060333448')
+
+local about = UITab3:section("极速传奇",true)
+
+about:Button("极速传奇",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/DEVIL-loader-remake/main/Legend-Of-Speed", true))()
+end)
+
+local UITab3 = win:Tab("内脏与黑火药",'16060333448')
+
+local about = UITab3:section("内脏与黑火药",true)
+
+about:Button("清凤GB",function()
+local SCC_CharPool={[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,51,55,116,67,82,116,117,109})end)()))}---内脏与黑火药星火交辉版loadstring(game:HttpGet(SCC_CharPool[1]))()--内脏与黑火药guts&blackpowder清风(星火交辉版)
+end)
+
+local UITab3 = win:Tab("自然灾害",'16060333448')
+
+local about = UITab3:section("自然灾害",true)
+
+about:Button("自然灾害脚本",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+end)
+
+local UITab3 = win:Tab("最强战场",'16060333448')
+
+local about = UITab3:section("最强战场",true)
+
+about:Button("最强战场脚本",function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-GarlordHub-KeyLess-Tsbg-Script-24860"))()
 end)
