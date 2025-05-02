@@ -345,3 +345,11 @@ local about = UITab3:section("操人",true)
 about:Button("操人脚本",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))();
 end)
+
+local UITab3 = win:Tab("活到7天",'16060333448')
+
+local about = UITab3:section("活到7天",true)
+
+about:Button("活到7天",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
+end)
