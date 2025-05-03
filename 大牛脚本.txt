@@ -15,6 +15,12 @@ Tab:AddLabel("此脚本完全免费")
 Tab:AddLabel("作者q:3592761157")
 Tab:AddLabel("你的注入器:"..identifyexecutor())
 Tab:AddLabel("你的用户名:"..game.Players.LocalPlayer.Character.Name)
+Tab:AddButton({
+   Name = "点击复制作者q号",
+   Callback = function()
+    setclipboard("3592761157")
+   end
+})
 Tab:AddLabel("此脚本为免费缝合脚本")
 Tab:AddLabel("禁止倒卖")
 
