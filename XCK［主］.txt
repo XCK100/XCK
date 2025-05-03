@@ -547,3 +547,11 @@ local about = UITab3:section("战斗勇士",true)
 about:Button("战斗勇士",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/frkfx/Combat-Warriors/main/Script"))();
 end)
+
+local UITab3 = win:Tab("活到7天",'16060333448')
+
+local about = UITab3:section("活到7天",true)
+
+about:Button("活到7天",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
+end)

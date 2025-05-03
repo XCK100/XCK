@@ -331,3 +331,15 @@ print("执行自然灾害")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
 end
 })   
+local currency = Window:MakeTab({
+    Name = "活到7天",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "活到7天",
+	Callback = function()
+print("执行活到7天")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
+end
+})   
