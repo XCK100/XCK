@@ -1,565 +1,357 @@
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/j9TdK86G"))()
 
--- 创建或获取存储启动次数的值
-local startCount = 0
-local success, result = pcall(function()
-    return readfile("AUGScriptStartCount.txt")
+print("初始化成功✅")
+print("脚本已运行")
+print("版本号为0.3.1")
+
+OrionLib:MakeNotification({
+                    Name = "XCK脚本", 
+                    Content = "UI测试页",
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+wait(1)
+
+print("UI加载成功✅")
+print("弹出(XCK脚本-UI测试页)")
+
+OrionLib:MakeNotification({
+                    Name = "XCK脚本", 
+                    Content = "欢迎使用XCK脚本",
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+wait(1)
+
+print("弹出(XCK脚本-欢迎使用XCK脚本)")
+
+OrionLib:MakeNotification({
+                    Name = "XCK脚本", 
+                    Content = "防反挂机已自动启动",
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+wait(1)
+print("防反挂机✅")
+
+print("弹出(XCK脚本-防反挂机已自动启动)")
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
 end)
-if success then
-    startCount = tonumber(result) or 0
+
+print("执行(防反挂机)")
+
+OrionLib:MakeNotification({
+                    Name = "XCK脚本", 
+                    Content = "你的注入器是:"..identifyexecutor(),
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+wait(1)
+
+print("弹出(XCK脚本-你的注入器是)"..identifyexecutor())
+
+OrionLib:MakeNotification({
+                    Name = "XCK脚本", 
+                    Content = "你的用户名是:"..game.Players.LocalPlayer.Character.Name,
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+
+print("弹出(XCK脚本-你的用户名是)"..game.Players.LocalPlayer.Character.Name)
+
+local Window = OrionLib:MakeWindow({Name = "XCK脚本", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用XCK脚本", ConfigFolder = "123"})
+
+print("脚本加载成功✅")
+print("创建主UI(XCK脚本-XCK脚本-123)")
+
+local announcement = Window:MakeTab({
+    Name = "主页",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+announcement:AddParagraph("作者","XCK")
+announcement:AddLabel("你的注入器:"..identifyexecutor())
+announcement:AddLabel("你的用户名:"..game.Players.LocalPlayer.Character.Name)
+announcement:AddLabel("你的客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
+announcement:AddLabel("当前服务器ID:"..game.GameId)
+announcement:AddLabel("你的账号年龄:"..game.Players.LocalPlayer.AccountAge)
+announcement:AddLabel("你的账号ID:"..game.Players.LocalPlayer.UserId)
+announcement:AddButton({
+	Name = "QQ群966473735点击复制",
+	Callback = function()
+print("执行(复制966473735)并弹出(复制成功-你已复制QQ群号)")
+setclipboard("979483258")
+OrionLib:MakeNotification({
+                    Name = "复制成功", 
+                    Content = "你已复制QQ群号",
+                    Time = 10 -- 持续时间
+                })    
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
 end
-
--- 增加启动次数并保存
-startCount = startCount + 1
-writefile("AUGScriptStartCount.txt", tostring(startCount))
-
--- 创建更醒目的透明显示UI
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "StartCounterGui"
-screenGui.Parent = PlayerGui
-
--- 主框架（带轻微阴影效果）
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 220, 0, 50)  -- 稍微加宽
-frame.Position = UDim2.new(1, -230, 0, 20)  -- 右上角
-frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-frame.BackgroundTransparency = 0.3  -- 更透明的背景
-frame.BorderSizePixel = 0
-frame.Parent = screenGui
-
--- 添加轻微阴影效果
-local shadow = Instance.new("ImageLabel")
-shadow.Name = "Shadow"
-shadow.Size = UDim2.new(1, 10, 1, 10)
-shadow.Position = UDim2.new(0, -5, 0, -5)
-shadow.BackgroundTransparency = 1
-shadow.Image = "rbxassetid://1316045217"
-shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-shadow.ImageTransparency = 0.8
-shadow.ScaleType = Enum.ScaleType.Slice
-shadow.SliceCenter = Rect.new(10, 10, 118, 118)
-shadow.Parent = frame
-
--- 更醒目的文字标签
-local textLabel = Instance.new("TextLabel")
-textLabel.Size = UDim2.new(0.8, 0, 1, 0)
-textLabel.Position = UDim2.new(0, 15, 0, 0)
-textLabel.BackgroundTransparency = 1
-textLabel.Text = "脚本已启动 " .. startCount .. " 次"
-textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-textLabel.Font = Enum.Font.GothamSemibold  -- 更现代的字体
-textLabel.TextSize = 18  -- 更大的字号
-textLabel.TextXAlignment = Enum.TextXAlignment.Left
-textLabel.TextYAlignment = Enum.TextYAlignment.Center
-textLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)  -- 文字描边
-textLabel.TextStrokeTransparency = 0.5
-textLabel.Parent = frame
-
--- 更精致的关闭按钮
-local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 30, 0, 30)
-closeButton.Position = UDim2.new(1, -35, 0.5, -15)
-closeButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-closeButton.BackgroundTransparency = 0.5
-closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-closeButton.Text = "×"  -- 使用乘号代替X
-closeButton.Font = Enum.Font.GothamBold
-closeButton.TextSize = 20
-closeButton.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-closeButton.TextStrokeTransparency = 0.7
-closeButton.Parent = frame
-
--- 鼠标悬停效果
-closeButton.MouseEnter:Connect(function()
-    closeButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
-    closeButton.BackgroundTransparency = 0.3
-end)
-
-closeButton.MouseLeave:Connect(function()
-    closeButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-    closeButton.BackgroundTransparency = 0.5
-end)
-
--- 使UI可拖动
-local dragging = false
-local dragInput, dragStart, startPos
-
-frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = frame.Position
-        
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-            end
-        end)
-    end
-end)
-
-frame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement then
-        dragInput = input
-    end
-end)
-
-game:GetService("UserInputService").InputChanged:Connect(function(input)
-    if input == dragInput and dragging then
-        local delta = input.Position - dragStart
-        frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, 
-                                 startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end)
-
--- 关闭按钮功能
-closeButton.MouseButton1Click:Connect(function()
-    screenGui:Destroy()
-end)
-
--- 添加淡入动画
-frame.BackgroundTransparency = 1
-textLabel.TextTransparency = 1
-closeButton.BackgroundTransparency = 1
-closeButton.TextTransparency = 1
-
-local fadeIn = game:GetService("TweenService"):Create(
-    frame,
-    TweenInfo.new(0.5),
-    {BackgroundTransparency = 0.3}
-)
-fadeIn:Play()
-
-local textFadeIn = game:GetService("TweenService"):Create(
-    textLabel,
-    TweenInfo.new(0.5),
-    {TextTransparency = 0}
-)
-textFadeIn:Play()
-
-local buttonFadeIn = game:GetService("TweenService"):Create(
-    closeButton,
-    TweenInfo.new(0.5),
-    {BackgroundTransparency = 0.5, TextTransparency = 0}
-)
-buttonFadeIn:Play()
-
--- ===== 自动适应屏幕的水印 =====
-local function createAdaptiveWatermark()
-    -- 如果已有水印，先删除旧的
-    if game.CoreGui:FindFirstChild("AUG_Watermark") then
-        game.CoreGui.AUG_Watermark:Destroy()
-    end
-
-    -- 获取屏幕分辨率（ViewportSize）
-    local screenSize = workspace.CurrentCamera.ViewportSize
-
-    -- 创建水印GUI
-    local watermarkGui = Instance.new("ScreenGui")
-    watermarkGui.Name = "AUG_Watermark"
-    watermarkGui.Parent = game.CoreGui
-    watermarkGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling -- 确保显示在最上层
-    watermarkGui.ResetOnSpawn = false
-
-    local watermarkText = Instance.new("TextLabel")
-    watermarkText.Name = "WatermarkText"
-    watermarkText.Parent = watermarkGui
-    watermarkText.Text = "XCK" 
-    watermarkText.TextColor3 = Color3.fromRGB(255, 255, 255)
-    watermarkText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-    watermarkText.TextStrokeTransparency = 0.3 
-    watermarkText.Font = Enum.Font.GothamBold 
-    watermarkText.TextSize = math.floor(screenSize.Y * 0.02)
-    watermarkText.BackgroundTransparency = 1 
-    watermarkText.AnchorPoint = Vector2.new(1, 0) 
-    watermarkText.Position = UDim2.new(1, -10, 0, 10) 
-    watermarkText.TextXAlignment = Enum.TextXAlignment.Right 
-
-    watermarkText.Size = UDim2.new(0, watermarkText.TextBounds.X + 20, 0, watermarkText.TextBounds.Y + 10)
-
-    workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
-        screenSize = workspace.CurrentCamera.ViewportSize
-        watermarkText.TextSize = math.floor(screenSize.Y * 0.02)
-        watermarkText.Size = UDim2.new(0, watermarkText.TextBounds.X + 20, 0, watermarkText.TextBounds.Y + 10)
-    end)
+})     
+announcement:AddButton({
+	Name = "启动指令版空脚本",
+	Callback = function()
+print("执行(指令版空脚本)")
+loadstring(game:HttpGet("https://pastebin.com/raw/UGnRD4xU"))()
 end
+})   
+print("创建分类(announcement-主页)")
 
-createAdaptiveWatermark()
-
-local LBLG = Instance.new("ScreenGui", getParent)
-local LBL = Instance.new("TextLabel", getParent)
-local player = game.Players.LocalPlayer
-
-LBLG.Name = "LBLG"
-LBLG.Parent = game.CoreGui
-LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-LBLG.Enabled = true
-LBL.Name = "LBL"
-LBL.Parent = LBLG
-LBL.BackgroundColor3 = Color3.new(1, 1, 1)
-LBL.BackgroundTransparency = 1
-LBL.BorderColor3 = Color3.new(0, 0, 0)
-LBL.Position = UDim2.new(0.75,0,0.010,0)
-LBL.Size = UDim2.new(0, 133, 0, 30)
-LBL.Font = Enum.Font.GothamSemibold
-LBL.Text = "TextLabel"
-LBL.TextColor3 = Color3.new(1, 1, 1)
-LBL.TextScaled = true
-LBL.TextSize = 14
-LBL.TextWrapped = true
-LBL.Visible = true
-
-local FpsLabel = LBL
-local Heartbeat = game:GetService("RunService").Heartbeat
-local LastIteration, Start
-local FrameUpdateTable = { }
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "XCK脚本"; Text ="载入中"; Duration = 2; })wait("3")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "XCK脚本"; Text ="二改+自己的东西"; Duration = 2; })wait("2")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "我喜欢挂王牌"; Text ="🙏钱晨拜三拜"; Duration = 2; })wait("2")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "XCK脚本"; Text ="载入成功"; Duration = 3; })
-
-local function HeartbeatUpdate()
-	LastIteration = tick()
-	for Index = #FrameUpdateTable, 1, -1 do
-		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
-	end
-	FrameUpdateTable[1] = LastIteration
-	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
-	CurrentFPS = CurrentFPS - CurrentFPS % 1
-	FpsLabel.Text = ("现在时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+local TEST = Window:MakeTab({
+    Name = "注入器/脚本/测试或调试",
+	Icon = "rbxassetid://4483345998", -- roblox图片ID
+	PremiumOnly = false
+})
+TEST:AddButton({
+	Name = "打开F9(调试控制台)",
+	Callback = function() -- 被调整值
+    print("执行(打开F9(调试控制台))")
+    game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
 end
-Start = tick()
-Heartbeat:Connect(HeartbeatUpdate)
+})    
+TEST:AddButton({
+	Name = "测试注入器等级键盘按F9查看",
+	Callback = function()
+    print("执行(测试注入器等级)")
+    getgenv().printidentity = nil printidentity()
+end
+})   
+TEST:AddButton({
+	Name = "测试注入器UNC键盘按F9查看",
+	Callback = function()
+print("执行(测试注入器UNC)")
+loadstring(game:HttpGet("https://pastebin.com/raw/aR4dJHGT"))()
+end
+})   
 
-local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/whenheer/iuop/refs/heads/main/Protected_7843953596944453.lua"))();		
-local win = ui:new("XCK")
---
-local UITab1 = win:Tab("信息",'16060333448')
+print("创建分类(TEST-注入器/脚本/测试或调试)")
 
-local about = UITab1:section("作者信息",false)
-
-about:Label("好几个月积攒起来的知识做的")
-about:Label("每天不一定更新")
-about:Label("无任何师傅")
-about:Label("无任何感谢")
-
-local about = UITab1:section("你的信息",false)
-
-about:Label("你的注入器:"..identifyexecutor())
-about:Label("你的账号年龄:"..player.AccountAge.."天")
-about:Label("你的注入器:"..identifyexecutor())
-about:Label("你的用户名:"..game.Players.LocalPlayer.Character.Name)
-about:Label("你现在的服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
-about:Label("你现在的服务器id:"..game.GameId)
-about:Label("你的用户ID:"..game.Players.LocalPlayer.UserId)
-about:Label("获取客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
-
-local UITab3 = win:Tab("通用",'16060333448')
-
-local about = UITab3:section("通用",true)
-
-about:Button("转圈",function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-end)
-
-about:Button("无限跳",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
-end)
-
-about:Button("反挂机v2",function()
-  loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
-end)
-
-about:Button("血量设置",function()
-game.Players.LocalPlayer.Character.Humanoid.Health = Value
-end)
-
-about:Slider('设置重力', 'Sliderflag', 196.2, 196.2, 1000,false, function(Value)
-        game.Workspace.Gravity = Value
-    end)
-
-about:Slider("跳跃高度!", "JumpPower", game.Players.LocalPlayer.Character.Humanoid.JumpPower, 50, 1000, false, function(Jump)
-  spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jump end end)
-end)
-
-about:Slider("步行速度!", "WalkSpeed", game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, 16, 1000, false, function(Speed)
-  spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Speed end end)
-end)
-
-about:Button("飞行",function()
+local currency = Window:MakeTab({
+    Name = "通用",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "飞行",
+	Callback = function()
+print("执行飞行")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-end)
-
-about:Button("飞车",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/63T0fkBm"))()
-end)
-
-about:Button("高画质",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
-end)
-
-about:Button("甩人",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
-end)
-
-about:Toggle("夜视","Toggle",false,function(Value)
-if Value then
-
-		    game.Lighting.Ambient = Color3.new(1, 1, 1)
-
-		else
-
-		    game.Lighting.Ambient = Color3.new(0, 0, 0)
-
-		end
-end)
-
-about:Button("踏空行走",function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
-end)
-
-about:Button("隐身",function()
-loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()
-end)
-
-about:Button("无敌",function()
+end
+})   
+currency:AddButton({
+	Name = "无限跳",
+	Callback = function()
+print("执行无限跳")
+ loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+end
+})   
+currency:AddButton({
+	Name = "无敌",
+	Callback = function()
+print("执行无敌")
 loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()
-end)
-
-about:Button("控制玩家",function()
+end
+})  
+currency:AddButton({
+	Name = "隐身",
+	Callback = function()
+print("执行隐身")
+loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()
+end
+})   
+currency:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+print("执行踏空行走")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+end
+})   
+currency:AddButton({
+	Name = "甩人",
+	Callback = function()
+print("执行甩人")
+loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end
+})   
+currency:AddButton({
+	Name = "控制玩家",
+	Callback = function()
+print("执行控制玩家")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/tt/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0%20(1).txt"))()
-end)
-
-about:Button("撸管r6",function()
-loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
-end)
-
-about:Button("撸管r15",function()
-loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
-end)
-
-local UITab3 = win:Tab("操人",'16060333448')
-
-local about = UITab3:section("操人",true)
-
-about:Button("操人脚本",function()
+end
+})   
+currency:AddButton({
+	Name = "高画质",
+	Callback = function()
+print("执行高画质")
+loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+end
+})   
+currency:AddButton({
+	Name = "飞车",
+	Callback = function()
+print("执行飞车")
+loadstring(game:HttpGet("https://pastebin.com/raw/63T0fkBm"))()
+end
+})   
+currency:AddButton({
+	Name = "操人",
+	Callback = function()
+print("执行操人")
 loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))();
-end)
-
-local UITab3 = win:Tab("范围",'16060333448')
-
-local about = UITab3:section("范围",true)
-
-about:Button("普通范围",function()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "撸管",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "撸管r6",
+	Callback = function()
+print("执行撸管r6")
+loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
+end
+})   
+currency:AddButton({
+	Name = "撸管r15",
+	Callback = function()
+print("执行撸管r15")
+loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "范围",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "普通范围",
+	Callback = function()
+print("执行普通范围")
 loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
-end)
-
-about:Button("中等范围",function()
+end
+})   
+currency:AddButton({
+	Name = "中等范围",
+	Callback = function()
+print("执行中等范围")
 loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
-end)
-
-about:Button("全图范围",function()
+end
+})   
+currency:AddButton({
+	Name = "全图范围",
+	Callback = function()
+print("执行全图范围")
 loadstring(game:HttpGet("https://pastebin.com/raw/KKY9EpZU"))()
-end)
-
-about:Button("终极范围",function()
+end
+})   
+currency:AddButton({
+	Name = "终极范围",
+	Callback = function()
+print("执行终极范围")
 loadstring(game:HttpGet("https://pastebin.com/raw/CAQ9x4A7"))()
-end)
-
-local UITab3 = win:Tab("各大脚本",'16060333448')
-
-local about = UITab3:section("各大脚本",true)
-
-about:Button("XK脚本",function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
-end)
-
-about:Button("落叶中心",function()
-getgenv().LS="落叶中心" loadstring(game:HttpGet("https://raw.githubusercontent.com/krlpl/Deciduous-center-LS/main/%E8%90%BD%E5%8F%B6%E4%B8%AD%E5%BF%83%E6%B7%B7%E6%B7%86.txt"))()
-end)
-
-about:Button("皮脚本",function()
-getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
-end)
-
-about:Button("man脚本",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxluau/Roblox/main/ScriptHub.lua"))()
-end)
-
-about:Button("情云",function()
-loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()
-end)
-
-about:Button("拔叔脚本",function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\120\99\109\115\110\100\47\107\98\100\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\37\69\52\37\66\65\37\56\67\37\69\57\37\56\55\37\56\68\37\69\53\37\56\65\37\65\48\37\69\53\37\65\70\37\56\54\37\69\56\37\66\48\37\56\51\37\69\55\37\57\52\37\65\56\34\41\41\40\41")()
-end)
-
-about:Button("XA",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
-end)
-
-local UITab3 = win:Tab("河北唐县",'16060333448')
-
-local about = UITab3:section("河北唐县",true)
-
-about:Button("河北唐县刷钱脚本",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()
-end)
-
-local UITab3 = win:Tab("俄亥俄州",'16060333448')
-
-local about = UITab3:section("俄亥俄州",true)
-
-about:Button("一拳超人",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxluau/Roblox/main/ScriptHub.lua"))()
-end)
-
-about:Button("xa",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
-end)
-
-local UITab3 = win:Tab("刀刃球",'16060333448')
-
-local about = UITab3:section("刀刃球",true)
-
-about:Button("刀刃球",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/redopy7/Other-Blade-Ball/refs/heads/main/CroixByLoverMan.txt"))()
-end)
-
-local UITab3 = win:Tab("BF",'16060333448')
-
-local about = UITab3:section("BF",true)
-
-about:Button("BF",function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/KindIhave/ChibaHuB/main/Chiba-BF.txt'))()
-end)
-
-local UITab3 = win:Tab("极速传奇",'16060333448')
-
-local about = UITab3:section("极速传奇",true)
-
-about:Button("极速传奇",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/DEVIL-loader-remake/main/Legend-Of-Speed", true))()
-end)
-
-local UITab3 = win:Tab("内脏与黑火药",'16060333448')
-
-local about = UITab3:section("内脏与黑火药",true)
-
-about:Button("清凤GB",function()
-local SCC_CharPool={[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,51,55,116,67,82,116,117,109})end)()))}---内脏与黑火药星火交辉版loadstring(game:HttpGet(SCC_CharPool[1]))()--内脏与黑火药guts&blackpowder清风(星火交辉版)
-end)
-
-local UITab3 = win:Tab("自然灾害",'16060333448')
-
-local about = UITab3:section("自然灾害",true)
-
-about:Button("自然灾害脚本",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
-end)
-
-local UITab3 = win:Tab("最强战场",'16060333448')
-
-local about = UITab3:section("最强战场",true)
-
-about:Button("最强战场脚本",function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-GarlordHub-KeyLess-Tsbg-Script-24860"))()
-end)
-
-local UITab3 = win:Tab("被遗弃",'16060333448')
-
-local about = UITab3:section("被遗弃",true)
-
-about:Button("被遗弃",function()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "被遗弃",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "被遗弃",
+	Callback = function()
+print("执行被遗弃")
 loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()-- [(官方群:946378295)]
-end)
-
-local UITab3 = win:Tab("彩虹朋友",'16060333448')
-
-local about = UITab3:section("彩虹朋友",true)
-
-about:Button("彩虹朋友",function()
-loadstring(game:HttpGet("https://pastefy.app/2YdrWHxV/raw"))()
-end)
-
-local UITab3 = win:Tab("举重模拟器",'16060333448')
-
-local about = UITab3:section("举重模拟器",true)
-
-about:Button("举重模拟器",function()
-loadstring(game:HttpGet("https://pastefy.app/KSriAk53/raw"))()
-end)
-
-local UITab3 = win:Tab("火箭发射",'16060333448')
-
-local about = UITab3:section("火箭发射",true)
-
-about:Button("火箭发射",function()
-loadstring(game:HttpGet("https://pastefy.app/CMW6b0kZ/raw"))()
-end)
-
-local UITab3 = win:Tab("躲避",'16060333448')
-
-local about = UITab3:section("躲避",true)
-
-about:Button("躲避1",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Dc2-masket27727/Mobile-s-Hub/main/Main/Hydra/Evade.exe"))();
-end)
-
-about:Button("躲避2",function()
-loadstring(game:HttpGet("https://pastefy.app/BrdzWOKp/raw"))()
-end)
-
-local UITab3 = win:Tab("感染力微笑",'16060333448')
-
-local about = UITab3:section("感染力微笑",true)
-
-about:Button("感染力微笑",function()
-loadstring(game:HttpGet("https://pastefy.app/z8mDJJIX/raw"))()
-end)
-
-local UITab3 = win:Tab("超级大力士模拟器",'16060333448')
-
-local about = UITab3:section("超级大力士模拟器",true)
-
-about:Button("超级大力士模拟器",function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/hngamingroblox/scripts/main/strongman%20simulator'))()
-end)
-
-local UITab3 = win:Tab("死亡球",'16060333448')
-
-local about = UITab3:section("死亡球",true)
-
-about:Button("死亡球1",function()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "死亡球",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "死亡球",
+	Callback = function()
+print("执行死亡球")
 loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
-end)
-
-local UITab3 = win:Tab("战斗勇士",'16060333448')
-
-local about = UITab3:section("战斗勇士",true)
-
-about:Button("战斗勇士",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/frkfx/Combat-Warriors/main/Script"))();
-end)
-
-local UITab3 = win:Tab("活到7天",'16060333448')
-
-local about = UITab3:section("活到7天",true)
-
-about:Button("活到7天",function()
+end
+})  
+local currency = Window:MakeTab({
+    Name = "OHIO",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) 
+currency:AddButton({
+	Name = "XA",
+	Callback = function()
+print("执行XA")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/main/Games/Ohio"))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "刀刃球",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "刀刃球",
+	Callback = function()
+print("执行刀刃球")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/redopy7/Other-Blade-Ball/refs/heads/main/CroixByLoverMan.txt"))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "自然灾害",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "自然灾害",
+	Callback = function()
+print("执行自然灾害")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "活到7天",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "活到7天",
+	Callback = function()
+print("执行活到7天")
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Finaloutcome/7day/refs/heads/main/1222.lua'))()
-end)
-
-local UITab3 = win:Tab("Doors",'16060333448')
-
-local about = UITab3:section("Doors",true)
-
-about:Button("Doors",function()
+end
+})   
+local currency = Window:MakeTab({
+    Name = "Doors",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "Doors",
+	Callback = function()
+print("执行Doors")
 table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()
-end)
+end
+})   
