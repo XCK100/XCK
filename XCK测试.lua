@@ -553,22 +553,6 @@ loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/down
 end
 })  
 local currency = Window:MakeTab({
-    Name = "矿井",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-currency:AddButton({
-	Name = "作者ho2 QQ号1907157070",
-	Callback = function()
-print("执行作者ho2 QQ号1907157070")
-for i,v in ipairs(workspace.Items:GetChildren()) do
-local args = {
-	v.Name
-}
-game:GetService("ReplicatedStorage"):WaitForChild("shared/network/MiningNetwork@GlobalMiningEvents"):WaitForChild("CollectItem"):FireServer(unpack(args))
-end
-})
-local currency = Window:MakeTab({
     Name = "OHIO",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
