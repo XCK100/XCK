@@ -22,7 +22,7 @@ qqGroupLabel.BackgroundTransparency = 1
 qqGroupLabel.TextColor3 = Color3.new(0.5, 0.5, 0.5)  -- 设置Q群标签颜色为灰色，与其他文字区分开
 qqGroupLabel.Font = Enum.Font.SourceSansBold
 qqGroupLabel.TextSize = 16
-qqGroupLabel.Text = "Q群: 658358286"
+qqGroupLabel.Text = "Q群: 966473735"
 qqGroupLabel.Position = UDim2.new(0, 0, 0.05, 0)  -- 调整Q群标签位置在上方
 qqGroupLabel.Parent = frame
 
@@ -33,7 +33,7 @@ passwordPrompt.BackgroundTransparency = 1
 passwordPrompt.TextColor3 = Color3.new(1, 1, 1)  -- 设置GT脚本秘钥系统文字颜色为白色
 passwordPrompt.Font = Enum.Font.SourceSansBold
 passwordPrompt.TextSize = 20
-passwordPrompt.Text = "APT脚本秘钥系统"
+passwordPrompt.Text = "XCK脚本秘钥系统"
 passwordPrompt.Position = UDim2.new(0, 0, 0.2, 0)  -- 调整GT脚本秘钥系统位置在下方
 passwordPrompt.Parent = frame
 
@@ -72,7 +72,6 @@ submitButton.MouseButton1Click:Connect(function()
         passwordGui:Destroy()  -- 如果密码正确，销毁密码输入界面
         music:Stop() -- 停止音乐播放
         -- 以下是加载并执行外部脚本的代码，不建议在实际中使用，存在风险
-        
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/j9TdK86G"))()
 
 print("初始化成功✅")
@@ -281,6 +280,13 @@ loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
 end
 })   
 currency:AddButton({
+	Name = "玩家进入提示",
+	Callback = function()
+print("执行玩家进入提示")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
+end
+})
+currency:AddButton({
 	Name = "飞车",
 	Callback = function()
 print("执行飞车")
@@ -288,12 +294,93 @@ loadstring(game:HttpGet("https://pastebin.com/raw/63T0fkBm"))()
 end
 })   
 currency:AddButton({
+	Name = "速度更改",
+	Callback = function()
+print("执行速度更改")
+loadstring(game:HttpGet("https://pastebin.com/raw/Zuw5T7DP",true))()
+end
+})
+currency:AddButton({
 	Name = "操人",
 	Callback = function()
 print("执行操人")
 loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))();
 end
 })   
+currency:AddButton({
+	Name = "光影",
+	Callback = function()
+print("执行光影")
+loadstring(game:HttpGet("https://pastebin.com/raw/arzRCgwS"))()
+end
+})
+currency:AddButton({
+	Name = "旋转",
+	Callback = function()
+print("执行旋转")
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+end
+})
+currency:AddButton({
+	Name = "工具",
+	Callback = function()
+print("执行工具")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()
+end
+})
+currency:AddButton({
+	Name = "死亡笔记",
+	Callback = function()
+print("执行死亡笔记")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/tt/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0%20(1).txt"))()
+end
+})
+currency:AddButton({
+	Name = "爬墙",
+	Callback = function()
+print("执行爬墙")
+loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+end
+})
+currency:AddButton({
+	Name = "铁拳",
+	Callback = function()
+print("执行铁拳")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'))()
+end
+})
+currency:AddButton({
+	Name = "动作",
+	Callback = function()
+print("执行动作")
+loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+end
+})
+local currency = Window:MakeTab({
+    Name = "音乐",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "防空警报",
+	Callback = function()
+print("执行防空警报")
+local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://792323017"
+    sound.Parent = game.Workspace
+    sound:Play()
+end
+})
+currency:AddButton({
+	Name = "义友军进行曲",
+	Callback = function()
+print("执行义友军进行曲")
+local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1845918434"
+    sound.Parent = game.Workspace
+    sound:Play()
+end
+})
 local currency = Window:MakeTab({
     Name = "撸管",
 	Icon = "rbxassetid://4483345998",
@@ -359,6 +446,101 @@ loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.
 end
 })   
 local currency = Window:MakeTab({
+    Name = "力量传奇",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "力量传奇传送",
+	Callback = function()
+print("执行力量传奇传送")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/li/main/%E4%B8%81%E4%B8%81%E5%8A%9B%E9%87%8F.lua"))()  
+end
+})
+currency:AddButton({
+	Name = "力量传奇三",
+	Callback = function()
+print("执行力量传奇三")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/li/main/%E4%B8%81%E4%B8%81%E5%8A%9B%E9%87%8F.lua"))()
+end
+})
+currency:AddButton({
+	Name = "力量传奇二",
+	Callback = function()
+print("执行力量传奇二")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/BoaHacker/ROBLOX/main/cheat', true))()
+end
+})
+currency:AddButton({
+	Name = "力量传奇一",
+	Callback = function()
+print("执行力量传奇一")
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/jynzl/main/main/Musclas%20Legenos.lua'))()
+end
+})
+local currency = Window:MakeTab({
+    Name = "极速传奇",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "极速传奇1",
+	Callback = function()
+print("执行极速传奇1")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/Legend-of-Speed-Auto-/main/GetPet"))()
+end
+})
+currency:AddButton({
+	Name = "极速传奇二",
+	Callback = function()
+print("执行极速传奇二")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/renlua/Roblox/main/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.lua"))()
+end
+})
+local currency = Window:MakeTab({
+    Name = "忍者传奇",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "忍者传奇一",
+	Callback = function()
+print("执行忍者传奇一")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/-/main/AutoGetIDK(NinjaLegend)"))()
+end
+})
+currency:AddButton({
+	Name = "忍者传奇二",
+	Callback = function()
+print("执行忍者传奇二")
+loadstring(rawget(game:GetObjects("rbxassetid://3623753581"), 1).Source)("Pepsi Byte")loadstring(game:HttpGet("https://raw.githubusercontent.com/LOOF-sys/Roblox-Shit/main/SharkBite.lua",true))()
+end
+})
+local currency = Window:MakeTab({
+    Name = "钓鱼模拟器1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "钓鱼模拟器脚本",
+	Callback = function()
+print("执行钓鱼模拟器脚本")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/SRMHub"))() 
+end
+})
+local currency = Window:MakeTab({
+    Name = "钓鱼模拟器2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "钓鱼模拟器脚本",
+	Callback = function()
+print("执行钓鱼模拟器脚本")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/ggghjn/main/%E4%B8%81%E4%B8%81%E9%92%93%E9%B1%BC%E6%A8%A1%E6%8B%9F%E5%99%A8.txt"))()
+end
+})
+local currency = Window:MakeTab({
     Name = "死亡球",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
@@ -370,6 +552,22 @@ print("执行死亡球")
 loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
 end
 })  
+local currency = Window:MakeTab({
+    Name = "矿井",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "作者ho2 QQ号1907157070",
+	Callback = function()
+print("执行作者ho2 QQ号1907157070")
+for i,v in ipairs(workspace.Items:GetChildren()) do
+local args = {
+	v.Name
+}
+game:GetService("ReplicatedStorage"):WaitForChild("shared/network/MiningNetwork@GlobalMiningEvents"):WaitForChild("CollectItem"):FireServer(unpack(args))
+end
+})
 local currency = Window:MakeTab({
     Name = "OHIO",
 	Icon = "rbxassetid://4483345998",
@@ -394,6 +592,18 @@ print("执行刀刃球")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/redopy7/Other-Blade-Ball/refs/heads/main/CroixByLoverMan.txt"))()
 end
 })   
+local currency = Window:MakeTab({
+    Name = "寻宝模拟器",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "寻宝",
+	Callback = function()
+print("执行寻宝")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/gghb/main/%E4%B8%81%E4%B8%81%E5%AF%BB%E5%AE%9D.txt"))()
+end
+})
 local currency = Window:MakeTab({
     Name = "自然灾害",
 	Icon = "rbxassetid://4483345998",
@@ -450,6 +660,18 @@ loadstring(game:HttpGet("https://pastefy.app/2YdrWHxV/raw"))()
 end
 })   
 local currency = Window:MakeTab({
+    Name = "进击的僵尸",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "进击的僵尸",
+	Callback = function()
+print("执行进击的僵尸")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Zombie%20Attack", true))()
+end
+})
+local currency = Window:MakeTab({
     Name = "举重模拟器",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
@@ -461,6 +683,18 @@ print("执行举重模拟器")
 loadstring(game:HttpGet("https://pastefy.app/KSriAk53/raw"))()
 end
 })   
+local currency = Window:MakeTab({
+    Name = "蜂群模拟器",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "蜂群模拟器",
+	Callback = function()
+print("执行蜂群模拟器")
+loadstring(game:HttpGet("https://pastebin.com/raw/3A61hnGA", true))()
+end
+})
 local currency = Window:MakeTab({
     Name = "火箭发射",
 	Icon = "rbxassetid://4483345998",
@@ -504,6 +738,18 @@ print("执行感染力微笑")
 loadstring(game:HttpGet("https://pastefy.app/z8mDJJIX/raw"))()
 end
 }) 
+local currency = Window:MakeTab({
+    Name = "兵工厂",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "兵工厂",
+	Callback = function()
+print("执行兵工厂")
+loadstring(game:HttpGet("https://pastefy.app/2YdrWHxV/raw"))()
+end
+})
 local currency = Window:MakeTab({
     Name = "超级大力士模拟器",
 	Icon = "rbxassetid://4483345998",
@@ -662,10 +908,10 @@ local currency = Window:MakeTab({
 	PremiumOnly = false
 })
 currency:AddButton({
-	Name = "伐木大亨LuaWare汉化",
+	Name = "伐木大亨",
 	Callback = function()
-print("执行伐木大亨LuaWare汉化")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/LuaWare.lua", true))()
+print("执行伐木大亨")
+ loadstring(game:HttpGet("https://pastefy.app/Ppqt0Gib/raw"))()
 end
 })   
 currency:AddButton({
@@ -675,6 +921,30 @@ print("执行伐木大亨杀人脚本")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GreyCaat/LT2KillPlayers/main/LT2KillPlayers.lua", true))()
 end
 })   
+local currency = Window:MakeTab({
+    Name = "餐厅大亨",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "餐厅大亨",
+	Callback = function()
+print("执行餐厅大亨")
+ loadstring(game:HttpGet("https://pastefy.app/Ppqt0Gib/raw"))()
+end
+})
+local currency = Window:MakeTab({
+    Name = "法宝模拟器",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+currency:AddButton({
+	Name = "法宝模拟器",
+	Callback = function()
+print("执行法宝模拟器")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/zhanghuihuihuil/Script/main/%E6%B3%95%E5%AE%9D%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%B1%89%E5%8C%96'))()
+end
+})
 local currency = Window:MakeTab({
     Name = "犯罪",
 	Icon = "rbxassetid://4483345998",
@@ -760,6 +1030,34 @@ print("执行导管中心")
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
 end
 })   
+currency:AddButton({
+	Name = "神光脚本",
+	Callback = function()
+print("执行神光脚本")
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,56,102,50,76,99,113,113,80})end)())))()
+end
+})
+currency:AddButton({
+	Name = "禁漫中心",
+	Callback = function()
+print("执行禁漫中心")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/jmjmjmjmjmjmjmjmjmjmjmjmjmjmjmjm.lua"))()
+end
+})
+currency:AddButton({
+	Name = "脚本中心",
+	Callback = function()
+print("执行脚本中心")
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+end
+})
+currency:AddButton({
+	Name = "青脚本",
+	Callback = function()
+print("执行青脚本")
+loadstring(game:HttpGet('https://rentry.co/ct293/raw'))()
+end
+})
 local func = loadstring(scriptContent)
         if func then
             func()
